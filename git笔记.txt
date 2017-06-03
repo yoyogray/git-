@@ -1,0 +1,141 @@
+git  分布树版本控制系统 
+
+
+
+配置git 
+git config --global user.name "ygl"
+
+git config --global user.email "yuegray@163.com"
+
+
+
+git init                     将仓库初始化   出现 .git 文件夹
+
+git add index.html(fileName) 添加文件进入缓存
+
+git add .                    将整个文件夹上传到缓存区
+
+怎么修改仓库缓存区？	     
+删除 缓存区文件  git rm --cached index.html(fileName)
+
+
+
+去报缓存文件不在修改以后， 就将文件传到仓库中
+
+git commit -m  "第一次上传"    将文件上传到仓库区
+git commit -m  "第二次上传"    将文件修改后再次上传到仓库
+
+
+
+
+git log                    查看版本操作的记录 (文件ID , 作者， 日期)  最近的一次操作
+
+git reset --hard HEAD^     将版本返回到上一个版本
+git reset --hard HEAD~100  降版本返回到上100个版本
+git reset --hard ID        返回指定的文件版本
+
+
+
+git reflog 		   查看所有的操作记录
+
+git status 		   查看文件状态
+
+git diff index.html(fileName) 查看指定文件的最近一次修改的具体内容
+
+git diff HEAD HEAD^ --stat  （HEAD HEAD^ 可以看成两次提交的版本号ID）  查看两次提交有什么文件被修改了，无法查看具体修改内容
+
+git diff ID ID index.html(fileName)  查看两个指定版本的指定文件的具体修改内容
+
+
+
+怎么查看当前的版本数？
+git reset --hard HEAD  （HEAD当前指针）
+
+
+
+git checkout -- index.html  工作区恢复到最近一次commit 或 add 的状态（如果开发错误）
+
+
+git rm index.html 删除仓库中的某个文件
+如果文件被误删除，直接git reset --hard ID
+
+
+
+
+
+
+git分支和master 
+
+一般开发是在分指上开发，master是一个完整的上线仓库
+
+如何创建一个新分支，并在新分支上进行开发
+git branch newbranch(新建分支名)
+git branch -d newbranch (删除分支)
+
+
+git branch  查看所有分支
+
+git checkout newbranch (转到新分支的状态)
+然后在工作区进行开发，保存。。。
+
+git add . 加到缓存区
+
+git commit -m "newbranch"  添加到仓库
+只要上传自己的分支就行了。。。不要动master 
+
+
+git checkout master  （切换到master状态）
+
+git merge newbranch （将newbranch 分支合并到master分支上）
+git reset --hard ID    撤销merge操作  
+
+
+
+创建密匙  （机器和github绑定）
+setting  --- > ssh ---> generating a new SSH key and adding it to the ssh-agent -->
+
+本地 c盘下 用户 乐国磊  .ssh  .pub文件打开 
+
+
+
+
+把本地项目上传到github上
+1. 在github 上新建一个new repository
+
+2. 粘贴push an existing repository from the command line下的代码到本地git bash 
+
+
+
+
+
+上线后感觉没有开发好，
+
+
+
+
+
+
+
+仓库简历完成后，怎么修改仓库?
+在github 可以删除上线项目   setting 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
